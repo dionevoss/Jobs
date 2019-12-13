@@ -2,4 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import userReducer from './reducer/userReducer'
+
+import './App.css'
+
+const store = createStore(userReducer, {
+    user: [{name: 'Dione Voss', email: 'dionevoss@gmail.com'}]
+},
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window
+            .__REDUX_DEVTOOLS_EXTENSION__()
+)
+
+
+ReactDOM.render(
+<Provider store={store}>
+    <App />
+</Provider>
+, document.getElementById('root'));
