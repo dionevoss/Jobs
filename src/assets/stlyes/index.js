@@ -15,11 +15,6 @@ export const ButtonStyle = styled(Button)`
         :hover {
             background-color: #7C7C7C
         }
-        
-        a {
-            text-decoration: none
-            color: white
-        }
     }
 `
 export const PaperStyle = styled(Paper)`

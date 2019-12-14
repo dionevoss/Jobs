@@ -20,9 +20,10 @@ export default () => (
                 <TextFieldStyle id="standar-basic" label="Email" />
                 <SpacerStyle />
 
-                <ButtonStyle style={{ padding: '0 100px 0 100px' }}>
-                    <Link to='/'>Atualizar</Link>
-                </ButtonStyle>
+                
+                <Link to='/'>
+                    <ButtonStyle style={{ padding: '0 100px 0 100px' }}>Atualizar</ButtonStyle>
+                </Link>
             </div>
         </PaperStyle>
     </Fragment>

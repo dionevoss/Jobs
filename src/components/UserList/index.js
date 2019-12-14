@@ -14,9 +14,9 @@ export default () => {
         <Fragment>
             <ContainerStyle>
                 <h1>Usuários</h1>
-                <ButtonStyle>
-                    <Link to='/update'>Criar</Link>
-                </ButtonStyle>
+                    <Link to='/update'>
+                        <ButtonStyle>Criar</ButtonStyle>
+                    </Link>
             </ContainerStyle>
             <div>
                 <PaperStyle>

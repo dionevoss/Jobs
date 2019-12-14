@@ -16,9 +16,9 @@ export default () => (
                 <SpacerStyle />
                 <SubjectStyle>Email:</SubjectStyle> dionevoss@gmail.com
                 <SpacerStyle />
-                <ButtonStyle>
-                    <Link to='/'>Voltar</Link>
-                </ButtonStyle>
+                    <Link to='/'>
+                        <ButtonStyle>Voltar</ButtonStyle>
+                    </Link>
             </div>
         </PaperStyle>
     </Fragment>
