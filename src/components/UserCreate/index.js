@@ -11,7 +11,6 @@ import { Redirect } from 'react-router'
 
 export default () => {
 
-    const id = 21
     const [name, setName] = useState('')
     const [job, setJob] = useState('')
     const [birth, setBirth] = useState(new Date())
@@ -45,7 +44,7 @@ export default () => {
     }
 
     const handleCreate = async () => {
-        await api.post('/users', {id, name, job, birthday: birth, email})
+        await api.post('/users', {name, job, birthday: birth, email})
             .then(() => setRedirect(true))
             alert('Registrado!')
     }
