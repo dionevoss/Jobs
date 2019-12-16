@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import TableCell from '@material-ui/core/TableCell'
+import TableRow from '@material-ui/core/TableRow'
 
 export const TableCellStyle = styled(TableCell)`
     && {
@@ -10,6 +11,14 @@ export const TableCellStyle = styled(TableCell)`
             font-size: 16px
             line-height: 19px
             color: #7C7C7C
+        }
+    }
+`
+
+export const TableRowStyle = styled(TableRow)`
+    && {
+        :hover {
+            cursor: pointer
         }
     }
 `
