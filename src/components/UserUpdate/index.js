@@ -11,13 +11,13 @@ export default () => (
             <div style={{ padding: '3%'}}>
                 <TextStyle>Atualizar Usuário</TextStyle>
 
-                <TextFieldStyle id="standar-basic" label="Nome" />
+                <TextFieldStyle label="Nome" />
                 <SpacerStyle />
-                <TextFieldStyle id="standar-basic" label="Vaga" />
+                <TextFieldStyle label="Vaga" />
                 <SpacerStyle />
-                <TextFieldStyle id="standar-basic" label="Data de Nascimento" />
+                <TextFieldStyle label="Data de Nascimento" />
                 <SpacerStyle />
-                <TextFieldStyle id="standar-basic" label="Email" />
+                <TextFieldStyle label="Email" />
                 <SpacerStyle />
 
                 

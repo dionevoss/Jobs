@@ -1,25 +1,42 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
+import { useParams } from 'react-router'
 import { Link } from 'react-router-dom'
 
 import { SubjectStyle } from './styled'
 import { PaperStyle, ButtonStyle, TextStyle, SpacerStyle } from '../../assets/stlyes'
 
-export default () => (
-    <Fragment>
-        <PaperStyle>
-            <div style={{ padding: '3%'}}>
-                <TextStyle>Dionatan Penning Voss</TextStyle>
+import api from '../../services/api'
 
-                <SubjectStyle>Vaga:</SubjectStyle> Back-End
-                <SpacerStyle />
-                <SubjectStyle>Data de Nascimento:</SubjectStyle> 30/04/1996
-                <SpacerStyle />
-                <SubjectStyle>Email:</SubjectStyle> dionevoss@gmail.com
-                <SpacerStyle />
-                    <Link to='/'>
-                        <ButtonStyle>Voltar</ButtonStyle>
-                    </Link>
-            </div>
-        </PaperStyle>
-    </Fragment>
-)
+export default () => {
+    const { id } = useParams()
+    const [profile, setProfile] = useState('')
+    
+   useEffect(() => {
+        const fetchProfile = async () => {
+            await api.get(`/users/${id}`)
+                .then((response) => setProfile(response.data))
+                .catch((error) => console.log(error))
+        }
+        fetchProfile()
+    }, [id])
+
+    return (
+        <Fragment>
+            <PaperStyle>
+                <div style={{ padding: '3%'}}>
+                    <TextStyle>{profile.name}</TextStyle>
+
+                    <SubjectStyle>Vaga:</SubjectStyle> {profile.job}
+                    <SpacerStyle />
+                    <SubjectStyle>Data de Nascimento:</SubjectStyle> {profile.birthday}
+                    <SpacerStyle />
+                    <SubjectStyle>Email:</SubjectStyle> {profile.email}
+                    <SpacerStyle />
+                        <Link to='/'>
+                            <ButtonStyle>Voltar</ButtonStyle>
+                        </Link>
+                </div>
+            </PaperStyle>
+        </Fragment>
+    )
+}
