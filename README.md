@@ -1,6 +1,6 @@
 # Front-End Challenge
 
-This project was develop with reactjs library, using hooks, react-router, redux and some other libraries.\
+This project was develop with reactjs, using hooks, react-router and some other libraries.\
 As for the database, it was used [json-server](https://github.com/typicode/json-server).
 
 ## Dependecies
@@ -13,17 +13,15 @@ As for the database, it was used [json-server](https://github.com/typicode/json-
 * _react: ^16.12.0_
 * _react-dom: ^16.12.0_
 * _react-moment: ^0.9.7_
-* _react-redux: ^7.1.3_
 * _react-router: ^5.1.2_
 * _react-router-dom: ^5.1.2_
 * _react-scripts: 3.3.0_
-* _redux: ^4.0.4_
 * _styled-components: ^4.4.1_
 
 ## Running the Application
 Assuming you have [Node.Js](https://nodejs.org) installed, follow these steps.
 
-1. Go to root folder and install all dependecies needed, by ruuning this command:
+1. Go to root folder and install all dependecies needed by ruuning this command:
   - ### `npm i`
 
 2. Run json-server (database) with:
@@ -33,7 +31,7 @@ Assuming you have [Node.Js](https://nodejs.org) installed, follow these steps.
   - ### `npm start`
   
 **That's it!**\
-The Web app should be working.
+The Web app should be ruuning.
 
 Open http://localhost:3000 in your browser for the front-end application.\
-And http://localhost:3333/users to see your database.
+And http://localhost:3333/users to see your database. 
