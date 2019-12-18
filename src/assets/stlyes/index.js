@@ -1,9 +1,5 @@
 import styled from 'styled-components'
-import { 
-    Button,
-    Paper,
-
-} from '@material-ui/core'
+import { Button, Paper } from '@material-ui/core'
 
 export const ButtonStyle = styled(Button)`
     && {
@@ -19,7 +15,7 @@ export const ButtonStyle = styled(Button)`
 `
 export const PaperStyle = styled(Paper)`
     && {
-        margin: 5%;
+        margin: 5%
     }
 `
 

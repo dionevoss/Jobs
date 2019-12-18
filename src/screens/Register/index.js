@@ -1,13 +1,14 @@
 import React, { Fragment, useState } from 'react'
-
-import { TextFieldStyle } from './styled'
-import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+import { Redirect } from 'react-router'
 import DateFnsUtils from '@date-io/date-fns'
+import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers"
 
 import { PaperStyle, TextStyle, ButtonStyle, SpacerStyle } from '../../assets/stlyes'
+import { TextFieldStyle } from './styled'
+import Header from '../../components/Header'
 
 import api from '../../services/api'
-import { Redirect } from 'react-router'
+
 
 export default () => {
 
@@ -16,59 +17,59 @@ export default () => {
     const [birth, setBirth] = useState(new Date())
     const [email, setEmail] = useState('')
 
-    const [nameValidation, setNameValidation] = useState(false)
-    const [jobValidation, setJobValidation] = useState(false)
-    const [errors, setErrors] = useState(true)
+    const [isNameValidate, setIsNameValidate] = useState(false)
+    const [isJobValidate, setIsJobValidate] = useState(false)
+    const [isError, setIsError] = useState(true)
+    const [isRedirect, setIsRedirect] = useState(false)
 
-    const [redirect, setRedirect] = useState(false)
 
-
-    const validate = async (e) => {
+    const checkValidation = async (e) => {
         e.preventDefault()
         
         if(name.length < 3) {
-            setNameValidation(true)
-            setErrors(true)
+            setIsNameValidate(true)
+            setIsError(true)
         }else{
-            setNameValidation(false)
-            setErrors(false)
+            setIsNameValidate(false)
+            setIsError(false)
         }
 
         if(job.length < 3) {
-            setJobValidation(true)
-            setErrors(true)
+            setIsJobValidate(true)
+            setIsError(true)
         }else{
-            setJobValidation(false)
-            setErrors(false)
+            setIsJobValidate(false)
+            setIsError(false)
         }
     }
 
-    const handleCreate = async () => {
+    const handleCreateUser = async () => {
         await api.post('/users', {name, job, birthday: birth, email})
-            .then(() => setRedirect(true))
+            .then(() => setIsRedirect(true))
             alert('Registrado!')
     }
 
-    if (redirect)
+    if (isRedirect)
         return <Redirect to="/" />
 
-    if(!errors)
-        handleCreate()
+    if(!isError)
+        handleCreateUser()
 
     return (
         <Fragment>
+            <Header />
             <PaperStyle>
                 <div style={{ padding: '3%'}}>
                     <TextStyle>Criar Usuário</TextStyle>
-                    <form onSubmit={validate}>
-                        {redirect ? <Redirect to='/' /> : null}
+                    <form onSubmit={checkValidation}>
+                        {isRedirect ? <Redirect to='/' /> : null}
                         <TextFieldStyle InputLabelProps={{ required: false }}
                             required
                             label="Nome"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            error={nameValidation}
-                            helperText={nameValidation ? 'Nome deve conter ao menos 3 caracteres' : null}
+                            error={isNameValidate}
+                            helperText={isNameValidate ? 'Nome deve conter ao menos 3 caracteres' : null}
 
                         />
                         <SpacerStyle />
@@ -78,8 +79,8 @@ export default () => {
                             label="Vaga" 
                             value={job}
                             onChange={(e) => setJob(e.target.value)}
-                            error={jobValidation}
-                            helperText={jobValidation ? 'Vaga deve conter ao menos 3 caracteres' : null}
+                            error={isJobValidate}
+                            helperText={isJobValidate ? 'Vaga deve conter ao menos 3 caracteres' : null}
 
                         />
                         <SpacerStyle />

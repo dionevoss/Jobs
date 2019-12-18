@@ -5,6 +5,7 @@ import Moment from 'react-moment'
 
 import { SubjectStyle } from './styled'
 import { PaperStyle, ButtonStyle, TextStyle, SpacerStyle } from '../../assets/stlyes'
+import Header from '../../components/Header'
 
 import api from '../../services/api'
 
@@ -16,13 +17,13 @@ export default () => {
         const fetchProfile = async () => {
             await api.get(`/users/${id}`)
                 .then((response) => setProfile(response.data))
-                .catch((error) => console.log(error))
         }
         fetchProfile()
     }, [id])
 
     return (
         <Fragment>
+            <Header />
             <PaperStyle>
                 <div style={{ padding: '3%'}}>
                     <TextStyle>{profile.name}</TextStyle>

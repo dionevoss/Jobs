@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import TableCell from '@material-ui/core/TableCell'
-import TableRow from '@material-ui/core/TableRow'
+import { TableCell, TableRow } from '@material-ui/core'
 
 export const TableCellStyle = styled(TableCell)`
     && {

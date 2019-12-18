@@ -1,8 +1,8 @@
 import React from 'react'
-
-import { HeaderStyle } from './styled'
-import logo from '../../assets/images/logo.svg'
 import { Link } from 'react-router-dom'
+
+import logo from '../../assets/images/logo.svg'
+import { HeaderStyle } from './styled'
 
 export default () => (
     <HeaderStyle>
