@@ -9,6 +9,8 @@ As for the database, it was used [json-server](https://github.com/typicode/json-
 * _@material-ui/core: ^4.7.2_
 * _@material-ui/pickers: ^3.2.8_
 * _axios: ^0.19.0_
+* _json-server: ^0.15.1_
+* _moment: ^2.24.0_
 * _date-fns: ^2.0.0-beta.5_
 * _react: ^16.12.0_
 * _react-dom: ^16.12.0_
