@@ -1,10 +1,10 @@
 import React, { Fragment, useState } from 'react'
 import { Redirect } from 'react-router'
 import DateFnsUtils from '@date-io/date-fns'
-import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers"
+import { MuiPickersUtilsProvider } from "@material-ui/pickers"
 
-import { PaperStyle, TextStyle, ButtonStyle, SpacerStyle } from '../../assets/stlyes'
-import { TextFieldStyle } from './styled'
+import { PaperStyle, TextStyle, ButtonStyle, SpacerStyle } from '../../components/stlyes'
+import { KeyboardDatePickerStyle, TextFieldStyle } from './styled'
 import Header from '../../components/Header'
 
 import api from '../../services/api'
@@ -59,7 +59,7 @@ export default () => {
         <Fragment>
             <Header />
             <PaperStyle>
-                <div style={{ padding: '3%'}}>
+                <div style={{ padding: '3%' }}>
                     <TextStyle>Criar Usuário</TextStyle>
                     <form onSubmit={checkValidation}>
                         {isRedirect ? <Redirect to='/' /> : null}
@@ -86,7 +86,7 @@ export default () => {
                         <SpacerStyle />
 
                         <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                            <KeyboardDatePicker InputLabelProps={{ required: false }}
+                            <KeyboardDatePickerStyle InputLabelProps={{ required: false }}
                                 required
                                 disableFuture
                                 invalidDateMessage="Data invalida"
