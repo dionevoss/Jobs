@@ -7,7 +7,7 @@ export const ButtonStyle = styled(Button)`
         height: 50px
         color: white
         padding: 0px 55px 0px 55px
-
+        
         :hover {
             background-color: #7C7C7C
         }

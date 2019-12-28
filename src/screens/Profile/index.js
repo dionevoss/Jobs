@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Moment from 'react-moment'
 
 import { SubjectStyle } from './styled'
-import { PaperStyle, ButtonStyle, TextStyle, SpacerStyle } from '../../assets/stlyes'
+import { PaperStyle, ButtonStyle, TextStyle, SpacerStyle } from '../../components/styles'
 import Header from '../../components/Header'
 
 import api from '../../services/api'

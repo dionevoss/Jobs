@@ -4,7 +4,7 @@ import Moment from 'react-moment'
 import { Table, TableBody, TableHead, TableRow, TableCell } from '@material-ui/core'
 
 import { ContainerStyle, TableCellStyle, TableRowStyle } from './styled'
-import { ButtonStyle, PaperStyle } from '../../components/stlyes'
+import { ButtonStyle, PaperStyle } from '../../components/styles'
 import Header from '../../components/Header'
 
 import api from '../../services/api'

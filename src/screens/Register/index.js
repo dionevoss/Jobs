@@ -3,11 +3,12 @@ import { Redirect } from 'react-router'
 import DateFnsUtils from '@date-io/date-fns'
 import { MuiPickersUtilsProvider } from "@material-ui/pickers"
 
-import { PaperStyle, TextStyle, ButtonStyle, SpacerStyle } from '../../components/stlyes'
+import { PaperStyle, TextStyle, ButtonStyle, SpacerStyle } from '../../components/styles'
 import { KeyboardDatePickerStyle, TextFieldStyle } from './styled'
 import Header from '../../components/Header'
 
 import api from '../../services/api'
+import { Link } from '@material-ui/core'
 
 
 export default () => {
@@ -111,7 +112,14 @@ export default () => {
                             
                         />
                         <SpacerStyle />
+                        <SpacerStyle />
 
+                        <Link to='/' >
+                            <ButtonStyle style={{ padding: '0 100px 0 100px' }}>
+                                Voltar
+                            </ButtonStyle>
+                        </Link>
+                        <SpacerStyle />
                         <ButtonStyle type="submit" style={{ padding: '0 100px 0 100px' }}>
                             Enviar
                         </ButtonStyle>
